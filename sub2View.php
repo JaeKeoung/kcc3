@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <?php
     try {
     $pdo = new PDO('mysql:host=localhost; dbname=kccnoctice; charset=utf8', 'root', '');
@@ -9,7 +9,7 @@
         die("접속 오류: ".$Exception->getMessage()."<br>");
     }
     
-    $sql = 'select * from board order by idx desc';
+    $sql = 'select * from board where idx'.$idx=$_GET["idx"];
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
     $result = $stmh->fetchAll();
@@ -36,10 +36,8 @@
     tr:nth-child(1) {border-top: 3px solid #0a6e0a; background-color: #c8fac2;}
     th {font-family: 다음; font-size: 14px; color: #444; padding: 10px 10px;}
     td {border-top: 1px solid #cccccf; color: #444; font-family: 맑은 고딕; font-size: 13px; padding: 12px 0px;}
-    .title {width: 480px;}
-    .num {text-align: center;}
-    .date {text-align: center;}
-    .click {text-align: center;}
+    .title {width: 600px; text-align: left;}
+    .count {text-align: center;}
 </style>
 </head>
 <body>
@@ -150,28 +148,11 @@
 						<p class="join_txt">금강컨트리클럽을 이용하시기 불편함이 없도록 밝고 견강한 새로운 소식을 회원님께 알려드립니다.</p>
                                                 <table>
                                                     <tr>
-                                                        <th>번호</th>
-                                                        <th class="title">제목</th>
-                                                        <th>등록일</th>
-                                                        <th>조회수</th>
+                                                        <th class="title">
+                                                        <input type="hidden" name="Title" value="<?=$row['Title']?>">    
+                                                        <td><?=$row['Title']?></td></th>
+                                                        <th class="count">조회수</th>
                                                     </tr>
-                                                    <?php
-                                                        foreach ($result as $row) {
-                                                    ?>
-                                                    <form action="" method="post">
-                                                    <tr>
-                                                        <input type="hidden" name="Num" value="<?=$row['Num']?>">
-                                                        <td class="num"><?=$row['Num']?></td>
-                                                        <input type="hidden" value="<?=$row['Title']?>">
-                                                        <td><a herf="#"><?=$row['Title']?></a></td>
-                                                        <input type="hidden" value="<?=$row['Date']?>">
-                                                        <td class="date"><?=$row['Date']?></td>
-                                                        <input type="hidden" value="<?=$row['count']?>">
-                                                        <td class="click"><?=$row['count']?></td>
-                                                    </tr>
-                                                    <?php
-                                                    }
-                                                    ?>
                                                 </table>
 					</div>
 				</div>
