@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <?php
     try {
-    $pdo = new PDO('mysql:host=localhost; dbname=kccnoctice; charset=utf8', 'root', '');
+    $pdo = new PDO('mysql:host=localhost; dbname=kccnotice; charset=utf8', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
     }
@@ -156,9 +156,9 @@
                                                         <th>조회수</th>
                                                     </tr>
                                                     <?php
-                                                        foreach ($result as $row) {
+                                                      foreach ($result as $row) {
                                                     ?>
-                                                    <form action="" method="post">
+                                                    <form action="sub2View.php" method="post">
                                                     <tr>
                                                         <input type="hidden" name="Num" value="<?=$row['Num']?>">
                                                         <td class="num"><?=$row['Num']?></td>
@@ -166,12 +166,12 @@
                                                         <td><a herf="#"><?=$row['Title']?></a></td>
                                                         <input type="hidden" value="<?=$row['Date']?>">
                                                         <td class="date"><?=$row['Date']?></td>
-                                                        <input type="hidden" value="<?=$row['count']?>">
-                                                        <td class="click"><?=$row['count']?></td>
+                                                        <input type="hidden" value="<?=$row['Count']?>">
+                                                        <td class="click"><?=$row['Count']?></td>
                                                     </tr>
                                                     <?php
                                                     }
-                                                    ?>
+                                                    ?>  
                                                 </table>
 					</div>
 				</div>
