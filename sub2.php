@@ -40,6 +40,7 @@
     .num {text-align: center;}
     .date {text-align: center;}
     .click {text-align: center;}
+    #write {float: right; width: 70px; height: 30px;}
 </style>
 </head>
 <body>
@@ -172,6 +173,8 @@
                                                     <?php
                                                     }
                                                     ?>  
+                                                    <input type="submit" value="글쓰기" id="write">
+                                                    <form>
                                                 </table>
 					</div>
 				</div>

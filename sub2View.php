@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
     try {
-    $pdo = new PDO('mysql:host=localhost; dbname=kccnoctice; charset=utf8', 'root', '');
+    $pdo = new PDO('mysql:host=localhost; dbname=kccnotice; charset=utf8', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
     }
@@ -9,10 +9,6 @@
         die("접속 오류: ".$Exception->getMessage()."<br>");
     }
     
-    $sql = 'select * from board where idx'.$idx=$_GET["idx"];
-    $stmh = $pdo->prepare($sql);
-    $stmh->execute();
-    $result = $stmh->fetchAll();
 ?>
 <html lang="ko">
 <head>
@@ -147,12 +143,7 @@
 						<h2 class="sp_sub join_title">공지사항</h2>
 						<p class="join_txt">금강컨트리클럽을 이용하시기 불편함이 없도록 밝고 견강한 새로운 소식을 회원님께 알려드립니다.</p>
                                                 <table>
-                                                    <tr>
-                                                        <th class="title">
-                                                        <input type="hidden" name="Title" value="<?=$row['Title']?>">    
-                                                        <td><?=$row['Title']?></td></th>
-                                                        <th class="count">조회수</th>
-                                                    </tr>
+                                                    
                                                 </table>
 					</div>
 				</div>
