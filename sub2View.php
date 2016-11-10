@@ -28,12 +28,12 @@
 	});
 </script>
 <style>
-    table {margin-top: 40px; width: 735px;}
+/*    table {margin-top: 40px; width: 735px;}
     tr:nth-child(1) {border-top: 3px solid #0a6e0a; background-color: #c8fac2;}
     th {font-family: 다음; font-size: 14px; color: #444; padding: 10px 10px;}
     td {border-top: 1px solid #cccccf; color: #444; font-family: 맑은 고딕; font-size: 13px; padding: 12px 0px;}
     .title {width: 600px; text-align: left;}
-    .count {text-align: center;}
+    .count {text-align: center;}*/
 </style>
 </head>
 <body>
@@ -142,9 +142,15 @@
 					<div class="join_wrap">	
 						<h2 class="sp_sub join_title">공지사항</h2>
 						<p class="join_txt">금강컨트리클럽을 이용하시기 불편함이 없도록 밝고 견강한 새로운 소식을 회원님께 알려드립니다.</p>
-                                                <table>
-                                                    
-                                                </table>
+                                                <form action="kccnoticeFileUpload.php" method="post" enctype='multipart/form-data'>
+                                                   <label for="title">제목</label>
+                                                   <input type="text" size="50" maxlength="100" name="title"><br/>
+                                                   <label for="content">내용</label>
+                                                   <textarea name="memo" id="content" cols="30" rows="30"></textarea><br/>
+                                                   <label for="fupload">첨부파일</label>
+                                                   <input type="file" name="upload" id="fupload"><br/>
+                                                   <input type="submit" value="올리기">
+                                                </form>
 					</div>
 				</div>
 				</div>	

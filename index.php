@@ -74,7 +74,7 @@ require_once 'inc/header.php';
 			<li class="menu5">
 				<a href="#" class="sp_com site_menu5">COMMUNITY 커뮤니티</a>
 				<ul class="site_sub_menu">
-				<li><a href="sub1.php" class="sp_com site_menu5_1">공지사항</a></li>
+                                <li><a href="sub2.php" class="sp_com site_menu5_1">공지사항</a></li>
 				<li><a href="#" class="sp_com site_menu5_2">자료실</a></li>
 				<li><a href="#" class="sp_com site_menu5_3">Joinroom</a></li>
 				</ul>
