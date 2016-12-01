@@ -2,7 +2,7 @@
     $host="127.0.0.1";
     $user="root";
     $pass="";
-    $db="kccnotice";
+    $db="kcc";
     $dsn="mysql:host={$host};dbname={$db};charset=utf8";
     try{
     $pdo=new PDO($dsn,$user,$pass);
